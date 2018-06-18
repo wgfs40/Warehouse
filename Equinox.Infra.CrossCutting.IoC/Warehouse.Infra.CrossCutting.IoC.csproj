@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.0" />
+    <PackageReference Include="MediatR" Version="5.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Equinox.Infra.CrossCutting.Identity\Warehouse.Infra.CrossCutting.Identity.csproj" />
+    <ProjectReference Include="..\Warehouse.Application\Warehouse.Application.csproj" />
+    <ProjectReference Include="..\Warehouse.Domain\Warehouse.Domain.csproj" />
+    <ProjectReference Include="..\Warehouse.Infra.Data\Warehouse.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="4.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="2.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Equinox.Infra.CrossCutting.Bus\Warehouse.Infra.CrossCutting.Bus.csproj" />
+    <ProjectReference Include="..\Equinox.Infra.CrossCutting.Identity\Warehouse.Infra.CrossCutting.Identity.csproj" />
+    <ProjectReference Include="..\Equinox.Infra.CrossCutting.IoC\Warehouse.Infra.CrossCutting.IoC.csproj" />
+    <ProjectReference Include="..\Warehouse.Application\Warehouse.Application.csproj" />
+  </ItemGroup>
+
+</Project>

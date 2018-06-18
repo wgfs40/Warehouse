@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="CommandHandlers\" />
+    <Folder Include="Commands\" />
+    <Folder Include="EventHandlers\" />
+    <Folder Include="Events\" />
+    <Folder Include="Models\" />
+    <Folder Include="Validations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="7.6.100" />
+    <PackageReference Include="System.ComponentModel" Version="4.3.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
+    <PackageReference Include="System.Security.Claims" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Equinox.Infra.CrossCutting.Bus\Warehouse.Infra.CrossCutting.Bus.csproj" />
+    <ProjectReference Include="..\Warehouse.Domain.Core\Warehouse.Domain.Core.csproj" />
+  </ItemGroup>
+
+</Project>
