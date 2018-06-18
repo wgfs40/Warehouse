@@ -4,12 +4,17 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Warehouse.Domain.Core.Bus;
+using Warehouse.Domain.Core.Events;
 using Warehouse.Domain.Core.Notifications;
 using Warehouse.Domain.Interfaces;
 using Warehouse.Infra.CrossCutting.Bus;
 using Warehouse.Infra.CrossCutting.Identity.Authorization;
 using Warehouse.Infra.CrossCutting.Identity.Models;
 using Warehouse.Infra.CrossCutting.Identity.Services;
+using Warehouse.Infra.Data.Context;
+using Warehouse.Infra.Data.EventSourcing;
+using Warehouse.Infra.Data.Repository.EventSourcing;
+using Warehouse.Infra.Data.UoW;
 
 namespace Warehouse.Infra.CrossCutting.IoC
 {
@@ -44,13 +49,13 @@ namespace Warehouse.Infra.CrossCutting.IoC
 
             // Infra - Data
             //services.AddScoped<ICustomerRepository, CustomerRepository>();
-            //services.AddScoped<IUnitOfWork, UnitOfWork>();
-            //services.AddScoped<EquinoxContext>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<WirehouseContext>();
 
             // Infra - Data EventSourcing
-            //services.AddScoped<IEventStoreRepository, EventStoreSQLRepository>();
-            //services.AddScoped<IEventStore, SqlEventStore>();
-            //services.AddScoped<EventStoreSQLContext>();
+            services.AddScoped<IEventStoreRepository, EventStoreSQLRepository>();
+            services.AddScoped<IEventStore, SqlEventStore>();
+            services.AddScoped<EventStoreSQLContext>();
 
             // Infra - Identity Services
             services.AddTransient<IEmailSender, AuthEmailMessageSender>();
