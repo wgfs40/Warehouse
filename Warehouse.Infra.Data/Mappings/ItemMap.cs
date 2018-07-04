@@ -8,12 +8,12 @@ namespace Warehouse.Infra.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<Item> builder)
         {
-            builder.HasKey(i => i.Id);
+            builder.HasKey(i => i.ItemNumber);
             builder.Property(i => i.ItemNumber).HasColumnType("nvarchar").HasMaxLength(250).IsRequired();
             builder.Property(i => i.Location).HasColumnType("nvarchar").HasMaxLength(250).IsRequired();
             builder.Property(i => i.Description).HasColumnType("nvarchar").HasMaxLength(400).IsRequired();
             builder.Property(i => i.PartNumber).HasColumnType("nvarchar").HasMaxLength(250).IsRequired();
-            builder.Property(i => i.IDVendor).HasColumnType("int").IsRequired();
+            builder.Property(i => i.VendorId).HasColumnType("int").IsRequired();
             builder.Property(i => i.Quantity).HasColumnType("int").IsRequired();
             builder.Property(i => i.UM).HasColumnType("nvarchar").HasMaxLength(50);
             builder.Property(i => i.Max).HasColumnType("int").IsRequired();
@@ -28,7 +28,7 @@ namespace Warehouse.Infra.Data.Mappings
 
             builder.HasOne(i => i.Vendores)
                 .WithMany(v => v.Items)
-                .HasForeignKey(i => i.IDVendor);
+                .HasForeignKey(i => i.VendorId);
 
             builder.HasOne(i => i.Categories)
                 .WithMany(c => c.Items)

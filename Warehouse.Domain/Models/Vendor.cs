@@ -4,20 +4,20 @@ using Warehouse.Domain.Core.Models;
 
 namespace Warehouse.Domain.Models
 {
-    public class Vendor : Entity
+    public class Vendor : Entity<int>
     {
         #region Contructor
-        public Vendor(Guid id,string vendorname,string vendorcontact,
-                    string vendorphone, string direction,string company,
-                    string username)
+        public Vendor(int id,string vendorName, string vendorContact,
+                    string vendorPhone, string direction,string company,
+                    string userName)
         {
             Id = id;
-            VendorName = vendorname;
-            VendorContact = vendorcontact;
-            VendorPhone = vendorphone;
+            VendorName = vendorName;
+            VendorContact = vendorContact;
+            VendorPhone = vendorPhone;
             Direction = direction;
             Company = company;
-            UserName = username;
+            UserName = userName;
         }
         #endregion
 

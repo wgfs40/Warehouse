@@ -4,27 +4,27 @@ using Warehouse.Domain.Core.Models;
 
 namespace Warehouse.Domain.Models
 {
-    public class Item : Entity
+    public class Item : Entity<int>
     {
         #region Contructor
-        public Item(Guid id, string itemnumber,string location, string description,
-                    string partnumber,int idvendor,int categoryid,string um,
-                    int qty, int max, int min,DateTime datecreated,DateTime? datemodified,
+        public Item(int id, string itemNumber, string location, string description,
+                    string partNumber, int vendorId, int categoryID, string uM,
+                    int quantity, int max, int min,DateTime dateCreated, DateTime? dateModified,
                     string username,string company)
         {
             Id = id;
-            ItemNumber = itemnumber;
+            ItemNumber = itemNumber;
             Location = location;
             Description = description;
-            PartNumber = partnumber;
-            IDVendor = idvendor;
-            CategoryID = categoryid;
-            UM = um;
-            Quantity = qty;
+            PartNumber = partNumber;
+            VendorId = vendorId;
+            CategoryID = categoryID;
+            UM = uM;
+            Quantity = quantity;
             Max = max;
             Min = min;
-            DateCreated = datecreated;
-            DateModified = datemodified;
+            DateCreated = dateCreated;
+            DateModified = dateModified;
             Username = username;
             Company = company;
 
@@ -36,7 +36,7 @@ namespace Warehouse.Domain.Models
         public string Location { get; private set; }
         public string Description { get; private set; }
         public string PartNumber { get; private set; }
-        public int IDVendor { get; private set; }
+        public int VendorId { get; private set; }
         public int CategoryID { get; private set; }
         public string UM { get; private set; }
         public int Quantity { get; private set; }

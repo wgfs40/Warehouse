@@ -3,18 +3,18 @@ using Warehouse.Domain.Core.Models;
 
 namespace Warehouse.Domain.Models
 {
-    public class Despatch : Entity
+    public class Despatch : Entity<int>
     {
         #region Contructor
-        public Despatch(Guid id,string itemnumber,int qty,DateTime date,DateTime? datemodified,
-                        string tagmachine,string username,string company)
+        public Despatch(int id,string itemNumber, int quantity,DateTime date,DateTime? dateModified,
+                        string tagMachine, string username,string company)
         {
             Id = id;
-            ItemNumber = itemnumber;
-            Quantity = qty;
+            ItemNumber = itemNumber;
+            Quantity = quantity;
             Date = date;
-            DateModified = datemodified;
-            TagMachine = tagmachine;
+            DateModified = dateModified;
+            TagMachine = tagMachine;
             Username = username;
             Company = company;
 

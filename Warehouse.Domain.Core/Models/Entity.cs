@@ -1,13 +1,13 @@
 ﻿using System;
 namespace Warehouse.Domain.Core.Models
 {
-    public abstract class Entity
+    public abstract class Entity<EntityKey>
     {
-        public Guid Id { get; protected set; }
+        public EntityKey Id { get; protected set; }
 
         public override bool Equals(object obj)
         {
-            var compareTo = obj as Entity;
+            var compareTo = obj as Entity<EntityKey>;
 
             if (ReferenceEquals(this, compareTo)) return true;
             if (ReferenceEquals(null, compareTo)) return false;
@@ -15,7 +15,7 @@ namespace Warehouse.Domain.Core.Models
             return Id.Equals(compareTo.Id);
         }
 
-        public static bool operator ==(Entity a, Entity b)
+        public static bool operator ==(Entity<EntityKey> a, Entity<EntityKey> b)
         {
             if (ReferenceEquals(a, null) && ReferenceEquals(b, null))
                 return true;
@@ -26,7 +26,7 @@ namespace Warehouse.Domain.Core.Models
             return a.Equals(b);
         }
 
-        public static bool operator !=(Entity a, Entity b)
+        public static bool operator !=(Entity<EntityKey> a, Entity<EntityKey> b)
         {
             return !(a == b);
         }

@@ -3,21 +3,21 @@ using Warehouse.Domain.Core.Models;
 
 namespace Warehouse.Domain.Models
 {
-    public class Reciving : Entity
+    public class Reciving : Entity<int>
     {
         #region Contructor
-        public Reciving(Guid id, string itemnumber,int qty,decimal price,
-                        string ordernumber,int? vendorid,DateTime date,
-                        DateTime? datemodified,string username,string company)
+        public Reciving(int id, string itemNumber, int quantity, decimal price,
+                        string orderNumber, int? vendorId, DateTime date,
+                        DateTime? dateModified, string username,string company)
         {
             Id = id;
-            ItemNumber = itemnumber;
-            Quantity = qty;
+            ItemNumber = itemNumber;
+            Quantity = quantity;
             Price = price;
-            OrderNumber = ordernumber;
-            VendorId = vendorid;
+            OrderNumber = orderNumber;
+            VendorId = vendorId;
             Date = date;
-            DateModified = datemodified;
+            DateModified = dateModified;
             Username = username;
             Company = company;
         }

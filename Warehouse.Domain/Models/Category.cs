@@ -4,10 +4,10 @@ using Warehouse.Domain.Core.Models;
 
 namespace Warehouse.Domain.Models
 {
-    public class Category : Entity
+    public class Category : Entity<int>
     {
         #region Contructor
-        public Category(Guid id,string description, string company)
+        public Category(int id,string description, string company)
         {
             Id = id;
             Description = description;
