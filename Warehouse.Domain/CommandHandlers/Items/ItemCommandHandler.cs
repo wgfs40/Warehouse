@@ -8,7 +8,7 @@ using Warehouse.Domain.Interfaces;
 
 namespace Warehouse.Domain.CommandHandlers.Items
 {
-    public class ItemCommandHandler : CommandHandler
+    public class ItemCommandHandler : CommandHandler,
          IRequestHandler<RegisterNewItemCommand>
     {
         //private readonly ICustomerRepository _customerRepository;

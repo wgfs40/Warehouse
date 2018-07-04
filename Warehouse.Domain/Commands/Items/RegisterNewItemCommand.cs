@@ -1,10 +1,11 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using Warehouse.Domain.Core.Commands;
 using Warehouse.Domain.Validations.Item;
 
 namespace Warehouse.Domain.Commands.Items
 {
-    public class RegisterNewItemCommand : ItemCommand
+    public class RegisterNewItemCommand : ItemCommand, IRequest
     {
         #region Contructor
         public RegisterNewItemCommand(string itemNumber, string location, string description,
