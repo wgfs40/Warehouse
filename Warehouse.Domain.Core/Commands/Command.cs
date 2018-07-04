@@ -1,6 +1,6 @@
 ﻿
 using System;
-using System.ComponentModel.DataAnnotations;
+using FluentValidation.Results;
 using Warehouse.Domain.Core.Events;
 
 namespace Warehouse.Domain.Core.Commands
