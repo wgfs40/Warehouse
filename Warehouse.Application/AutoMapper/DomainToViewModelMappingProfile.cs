@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using System.Collections.Generic;
+using Warehouse.Application.ViewModels;
+using Warehouse.Domain.Models;
 
 namespace Warehouse.Application.AutoMapper
 {
@@ -6,7 +9,7 @@ namespace Warehouse.Application.AutoMapper
     {
         public DomainToViewModelMappingProfile()
         {
-            //CreateMap<Customer, CustomerViewModel>();
+            CreateMap<List<Item>, List<ItemViewModel>>();
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Warehouse.UI.Web
 
             builder.UseSqlServer(connectionString);
 
-            return new WirehouseContext(builder.Options);
+            return new WirehouseContext();
         }
     }
 }

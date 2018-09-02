@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using Warehouse.Domain.Interfaces;
 using Warehouse.Infra.Data.Context;
+using PagedList.Core;
 
 namespace Warehouse.Infra.Data.Repository
 {
@@ -25,6 +26,11 @@ namespace Warehouse.Infra.Data.Repository
         public virtual TEntity GetById(Guid id)
         {
             return DbSet.Find(id);
+        }
+
+        public IPagedList<TEntity> GetAllPaged(int index, int count)
+        {
+            return DbSet.ToPagedList(index, count);
         }
 
         public virtual IQueryable<TEntity> GetAll()
@@ -52,5 +58,7 @@ namespace Warehouse.Infra.Data.Repository
             Db.Dispose();
             GC.SuppressFinalize(this);
         }
+
+        
     }
 }

@@ -9,25 +9,28 @@ using Warehouse.Domain.Interfaces;
 namespace Warehouse.Domain.CommandHandlers.Items
 {
     public class ItemCommandHandler : CommandHandler,
-         IRequestHandler<RegisterNewItemCommand>
+         INotificationHandler<RegisterNewItemCommand>
     {
-        //private readonly ICustomerRepository _customerRepository;
+        private readonly IItemRepository _itemRepository;
         private readonly IMediatorHandler Bus;
 
-        public ItemCommandHandler(IMediatorHandler bus, IUnitOfWork uow, INotificationHandler<DomainNotification> notifications) : base(uow, bus, notifications)
+        public ItemCommandHandler(IMediatorHandler bus, IUnitOfWork uow, INotificationHandler<DomainNotification> notifications, IItemRepository itemRepository) : base(uow, bus, notifications)
         {
             Bus = bus;
+            _itemRepository = itemRepository;
         }
 
-        public  Task<Unit> Handle(RegisterNewItemCommand request, CancellationToken cancellationToken)
+        
+
+        Task INotificationHandler<RegisterNewItemCommand>.Handle(RegisterNewItemCommand notification, CancellationToken cancellationToken)
         {
-            if (!request.IsValid())
+            if (!notification.IsValid())
             {
-                NotifyValidationErrors(request);
-                return Unit.Task;
+                NotifyValidationErrors(notification);
+                return Task.CompletedTask;
             }
 
-            return Unit.Task;
+            return Task.CompletedTask;
         }
     }
 }

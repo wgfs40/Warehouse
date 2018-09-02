@@ -8,11 +8,7 @@ namespace Warehouse.Infra.Data.Context
 {
     public class WirehouseContext : DbContext
     {
-        public WirehouseContext(DbContextOptions<WirehouseContext> options):
-            base(options)
-        {
-
-        }
+       
         public DbSet<Item> Items { get; set; }
         public DbSet<Despatch> Despatches { get; set; }
         public DbSet<Reciving> Recivings { get; set; }

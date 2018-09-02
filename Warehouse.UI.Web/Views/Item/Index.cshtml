@@ -1,0 +1,33 @@
+﻿@model  IPagedList<ItemViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered table-hover table-responsive">
+    <tr>
+        <th>Numero de Item</th>
+        <th>Localización</th>
+        <th>Descripción</th>
+        <th>Número de parte</th>
+        <th>Cantidad</th>
+        <th>Maximo</th>
+        <th>Minimo</th>
+    </tr>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ItemNumber</td>
+                <td>@item.Location</td>
+                <td>@item.Description</td>
+                <td>@item.PartNumber</td>
+                <td>@item.Quantity</td>
+                <td>@item.Max</td>
+                <td>@item.Min</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

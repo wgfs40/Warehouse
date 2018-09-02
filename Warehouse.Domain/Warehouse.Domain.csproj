@@ -5,12 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="EventHandlers\" />
-    <Folder Include="Events\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FluentValidation" Version="7.6.100" />
+    <PackageReference Include="PagedList.Core.Mvc" Version="1.1.0" />
     <PackageReference Include="System.ComponentModel" Version="4.3.0" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
     <PackageReference Include="System.Security.Claims" Version="4.3.0" />
