@@ -9,7 +9,7 @@ namespace Warehouse.Application.AutoMapper
     {
         public DomainToViewModelMappingProfile()
         {
-            CreateMap<List<Item>, List<ItemViewModel>>();
+            CreateMap<Item, ItemViewModel>();
         }
     }
 }

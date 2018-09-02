@@ -5,6 +5,13 @@
     <UserSecretsId>aspnet-Warehouse.UI.Web-7886A377-5CD2-4C47-AFBE-D20B3B09F629</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Assets\Vue-Componets\**" />
+    <Content Remove="Assets\Vue-Componets\**" />
+    <EmbeddedResource Remove="Assets\Vue-Componets\**" />
+    <None Remove="Assets\Vue-Componets\**" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="7.0.0" />
